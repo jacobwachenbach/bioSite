@@ -1,36 +1,243 @@
+/* styles.css */
+
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* CSS Variables for easy theming */
+:root {
+  --color-primary: #ff8a00;
+  --color-secondary: #f4b738;
+  --color-accent: #ffcd80;
+  --color-bg: #fffcc9;
+  --color-light: #ffffff;
+  --color-dark: #333333;
+  --radius: 8px;
+  --transition: 0.3s ease;
+  --max-width: 960px;
+  --spacing: 1rem;
+}
+
+/* Global reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffcc9;
-    color: #333;
-    margin: 40px;
+  height: 100%;
+  margin: 0;
 }
 
-h1 {
-    color: #ff8a00;
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
 }
 
-h2 {
-    color: #f4b738;
-}
-
-h3 {
-    color: #ffcd80;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin: 8px 0;
-}
-
+/* Links: override visited so nav items never “turn purple” */
 a {
-    text-decoration: none;
-    color: #ff8a00;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition), background var(--transition);
 }
 
 a:hover {
-    text-decoration: underline;
+  color: var(--color-accent);
+}
+
+a:visited {
+  color: var(--color-primary);
+}
+
+/* Container utility (for inner content) */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+  width: 100%;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-primary);
+  color: var(--color-light);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing) 0;
+}
+
+.logo a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+/* Static nav: same three links on every page */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing);
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  color: var(--color-light);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.site-nav a:visited {
+  /* ensure visited state stays the same as normal */
+  background: transparent;
+  color: var(--color-light);
+}
+
+/* Main content background full-width */
+.site-main {
+  flex: 1;
+  width: 100%;
+  background: var(--color-light);
+  padding: 2rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+}
+
+/* Inner container for text alignment */
+.site-main .container {
+}
+
+.site-main h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Q&A list (hobbies page) */
+.qa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.qa-list li {
+  background: var(--color-bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Figure + caption */
+.image-with-caption {
+  text-align: center;
+}
+
+
+.youtube-with-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 300px;          
+    text-align: center;
+  }
+  
+  .youtube-with-caption img {
+    max-width: 5vw;
+    height: auto;
+    transition: transform var(--transition);
+  }
+  
+  .youtube-with-caption img:hover {
+    transform: scale(1.1);
+  }
+  
+  .youtube-with-caption figcaption {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+  }
+  
+
+.image-with-caption img {
+  max-width: 100vw;
+  height: auto;
+  transition: transform var(--transition);
+}
+
+.image-with-caption img:hover {
+  transform: scale(1.02);
+}
+
+.image-with-caption figcaption {
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+/* 10. Typography */
+h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: var(--color-primary);
+}
+
+h2,
+h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--color-secondary);
+}
+
+.site-footer a:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }

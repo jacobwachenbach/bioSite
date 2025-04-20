@@ -1,32 +1,60 @@
+<!-- hobbies.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Chris's Hobbies</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Chris’s Hobbies & Q&A</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hobbies & Q&A</h1>
-    <h2>Get to Know Chris</h2>
 
-    <div>
-        <h3>Q&A</h3>
+  <!-- Header organism -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">Chris’s bioSite</a></h1>
+      <nav class="site-nav">
         <ul>
-            <li><strong>Favorite Color:</strong> Orange</li>
-            <li><strong>First Job:</strong> Ice cream shop in Illinois</li>
-            <li><strong>Age:</strong> 27</li>
-            <li><strong>College Major:</strong> Computer Science</li>
-            <li><strong>College:</strong> Iowa State University</li>
-            <li><strong>Fraternity:</strong> Kappa Sigma</li>
-            <li><strong>Favorite Game:</strong> Marvel Rivals</li>
-            <li><strong>Current Job:</strong> Google, Software Developer</li>
-            <li><strong>Favorite Language:</strong> React</li>
-            <li><strong>Last Travel:</strong> Japan</li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
         </ul>
+      </nav>
     </div>
+  </header>
 
-    <div>
-        <a href="index.html">← Back to Home</a>
+  <!-- Main organism -->
+  <main class="site-main">
+    <div class="container">
+      <h2>Get to Know Me</h2>
+      <ul class="qa-list">
+        <li><strong>Favorite Color:</strong> Orange</li>
+        <li><strong>First Job:</strong> Ice cream shop in Illinois</li>
+        <li><strong>Age:</strong> 27</li>
+        <li><strong>College Major:</strong> Computer Science</li>
+        <li><strong>Favorite Game:</strong> Marvel Rivals</li>
+        <li><strong>Current Job:</strong> Software Developer at Google</li>
+        <li><strong>Last Travel:</strong> Japan</li>
+      </ul>
+
+      <figure class="youtube-with-caption">
+            <a href="https://www.youtube.com/@dethswurl"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit DethsWurl on YouTube">
+            <img src="images/youtube.png"
+                alt="DethsWurl YouTube channel logo">
+            </a>
+        <figcaption>Relaxing Youtube Channel</figcaption>
+      </figure>
     </div>
+  </main>
+
+  <!-- Footer organism -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Christopher Pavlopoulos. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
